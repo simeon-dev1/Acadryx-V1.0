@@ -1,0 +1,555 @@
+j<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acadryx – Features</title>
+    <style>
+        /* ---------- ACADRYX BRAND ---------- */
+        /* Simeon · 16 · Built with hands, not generators */
+        /* Blue: rgb(11, 41, 190) · Teal: rgb(13, 124, 150) · Light: rgb(230, 230, 255) */
+        
+        :root {
+            --primary: rgb(11, 41, 190);
+            --primary-dark: rgb(8, 30, 140);
+            --background: rgb(230, 230, 255);
+            --logo: rgb(0, 0, 100);
+            --accent: rgb(13, 124, 150);
+            --accent-soft: rgba(13, 124, 150, 0.1);
+            --border-light: #E2E8F0;
+            --text-dark: #1A2E3C;
+            --text-soft: #334B5C;
+            --text-muted: #4F6F7F;
+            --card-white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--background);
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 2rem 1.5rem;
+            padding-top: 0;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* HEADER / NAV (copied from index) */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4rem;
+            flex-wrap: wrap;
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 1rem;
+            box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        
+        .logo-text {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--logo);
+            text-decoration: underline wavy var(--accent);
+            text-underline-offset: 8px;
+            text-decoration-thickness: 2px;
+        }
+        
+        .globe {
+            font-size: 1.8rem;
+            line-height: 1;
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            margin-left: 2rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 450;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* PAGE HEADER */
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .subhead {
+            font-size: 1.3rem;
+            color: var(--text-soft);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* FEATURE SECTIONS */
+        .feature-section {
+            margin-bottom: 5rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .feature-content h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .feature-description {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .feature-impact {
+            background: var(--card-white);
+            padding: 1.5rem;
+            border-radius: 24px;
+            border-left: 6px solid var(--accent);
+            margin: 1.5rem 0;
+        }
+
+        .feature-impact p {
+            font-size: 1.1rem;
+            color: var(--text-soft);
+            margin-bottom: 0;
+            font-style: italic;
+        }
+
+        .feature-details {
+            list-style: none;
+        }
+
+        .feature-details li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.8rem;
+            position: relative;
+            font-size: 1rem;
+            color: var(--text-muted);
+        }
+
+        .feature-details li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .feature-visual {
+            background: var(--card-white);
+            padding: 2rem;
+            border-radius: 32px;
+            border: 1px solid var(--border-light);
+            box-shadow: 0 8px 24px rgba(11, 41, 190, 0.04);
+        }
+
+        .mockup-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .mockup-card {
+            background: var(--background);
+            padding: 1.5rem;
+            border-radius: 16px;
+            margin-bottom: 1rem;
+        }
+
+        .mockup-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .mockup-line {
+            height: 8px;
+            background: rgba(11, 41, 190, 0.1);
+            border-radius: 4px;
+            margin-bottom: 0.8rem;
+        }
+
+        .mockup-line.short { width: 60%; }
+        .mockup-line.medium { width: 80%; }
+        .mockup-line.long { width: 100%; }
+
+        .mockup-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .mockup-badge {
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            background: var(--accent-soft);
+            color: var(--accent);
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ITERATION SECTION */
+        .iteration {
+            background: var(--primary);
+            color: white;
+            padding: 4rem 3rem;
+            border-radius: 40px;
+            margin: 4rem 0;
+        }
+
+        .iteration h2 {
+            color: white;
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .iteration-sub {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+
+        .iteration-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+        }
+
+        .iteration-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem 1.5rem;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(4px);
+        }
+
+        .iteration-card h3 {
+            color: white;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .iteration-card p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            margin-bottom: 0;
+            text-align: left;
+        }
+
+        .iteration-guarantee {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 60px;
+            font-size: 1.1rem;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* FOOTER */
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-light);
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+
+        .student-signature {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 800px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .feature-visual {
+                order: -1;
+            }
+            
+            h1 { font-size: 2.4rem; }
+            .navbar { flex-direction: column; align-items: flex-start; gap: 1rem; }
+            .nav-links a { margin-left: 0; margin-right: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER (same as index) -->
+        <header class="navbar">
+            <div class="logo">
+                <span class="logo-text">Acadryx</span>
+                <span class="globe">🌍</span>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="features.html" class="active">Features</a>
+                <a href="#">Pricing</a>
+                <a href="#">Docs</a>
+            </nav>
+        </header>
+
+        <!-- PAGE HEADER -->
+        <div class="page-header">
+            <h1>What Acadryx Actually Does</h1>
+            <p class="subhead">Not a list of modules. A description of what becomes possible.</p>
+        </div>
+
+        <!-- 1. IDENTITY & ACCESS -->
+        <div class="feature-section">
+            <div class="feature-grid">
+                <div class="feature-content">
+                    <h2>Identity & Access</h2>
+                    <p class="feature-description">Code login. No emails. No passwords. No IT headaches.</p>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-soft);">School generates login codes. Parents and students enter them once. Dashboards appear — Admin, Teacher, Student, Parent, Alumni. Each sees what they need. Nothing else.</p>
+                    
+                    <div class="feature-impact">
+                        <p>“A student's account follows them from Pre-KG to Senior Secondary. Never recreated. Never lost.”</p>
+                    </div>
+                    
+                    <ul class="feature-details">
+                        <li>Five roles, one school — different views, same data</li>
+                        <li>Profile permanence across terms, years, sections</li>
+                        <li>Alumni keep access after graduation</li>
+                    </ul>
+                </div>
+                <div class="feature-visual">
+                    <div class="mockup-label">⬤⬤⬤ Student Login</div>
+                    <div class="mockup-card">
+                        <div class="mockup-title">Kogbodi International School</div>
+                        <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+                            <span class="mockup-badge">Admin</span>
+                            <span class="mockup-badge">Teacher</span>
+                            <span class="mockup-badge">Parent</span>
+                            <span class="mockup-badge">Student</span>
+                            <span class="mockup-badge">Alumni</span>
+                        </div>
+                        <div style="background: var(--background); padding: 1rem; border-radius: 12px;">
+                            <div style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.5rem;">Login code: KOG-24A7-B3</div>
+                            <div style="font-size: 0.9rem; color: var(--text-muted);">One code. One click. Dashboard loads.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. ACADEMIC BOILERPLATES -->
+        <div class="feature-section">
+            <div class="feature-grid">
+                <div class="feature-content">
+                    <h2>Academic Boilerplates</h2>
+                    <p class="feature-description">Not hardcoded hierarchies. Templates you own.</p>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-soft);">Start with sensible defaults — Primary, Junior Secondary, Senior Secondary, Arms (A, B, C). Then edit, rename, restructure. It's your school. You decide how it's organized.</p>
+                    
+                    <div class="feature-impact">
+                        <p>“Set your own terms, session dates, result patterns. Change them anytime.”</p>
+                    </div>
+                    
+                    <ul class="feature-details">
+                        <li>Pre-KG to Senior Secondary — all sections included</li>
+                        <li>Rename anything: "House," "Cluster," "Stream"</li>
+                        <li>Subject weights for divided teachers (40/60, 30/70)</li>
+                        <li>Acadryx remembers your patterns — no rebuilding every term</li>
+                    </ul>
+                </div>
+                <div class="feature-visual">
+                    <div class="mockup-label">⬤⬤⬤ School Structure</div>
+                    <div style="background: var(--background); padding: 1.5rem; border-radius: 16px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+                            <span style="font-weight: 600;">Senior Secondary 1</span>
+                            <span style="color: var(--accent);">✎ Edit</span>
+                        </div>
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem;">
+                            <span style="background: white; padding: 0.3rem 1rem; border-radius: 40px; font-size: 0.8rem;">SS1A</span>
+                            <span style="background: white; padding: 0.3rem 1rem; border-radius: 40px; font-size: 0.8rem;">SS1B</span>
+                            <span style="background: white; padding: 0.3rem 1rem; border-radius: 40px; font-size: 0.8rem;">SS1C</span>
+                            <span style="background: white; padding: 0.3rem 1rem; border-radius: 40px; font-size: 0.8rem; opacity: 0.6;">+ Add arm</span>
+                        </div>
+                        <div style="font-size: 0.9rem; color: var(--text-muted);">"We call ours 'Houses' not 'Arms'" — click to rename →</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. RESULTS ENGINE -->
+        <div class="feature-section">
+            <div class="feature-grid">
+                <div class="feature-content">
+                    <h2>Results Engine</h2>
+                    <p class="feature-description">What took weeks now takes one day.</p>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-soft);">Teachers enter scores. Acadryx calculates weighted totals automatically. Admin reviews. One click publishes every report card.</p>
+                    
+                    <div class="feature-impact">
+                        <p>“Schools that used paper for 40 years go digital in one term.”</p>
+                    </div>
+                    
+                    <ul class="feature-details">
+                        <li>Bulk upload via spreadsheet — generate whole classes at once</li>
+                        <li>Weighted scoring for subjects with multiple teachers</li>
+                        <li>One click publishes every report card in a class</li>
+                        <li>Immutable archives — once a term closes, results lock forever</li>
+                    </ul>
+                </div>
+                <div class="feature-visual">
+                    <div class="mockup-label">⬤⬤⬤ Result Publication</div>
+                    <div class="mockup-card">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+                            <span class="mockup-title">SS1A — 1st Term 2026</span>
+                            <span style="color: var(--accent); font-weight: 600;">● Publish ready</span>
+                        </div>
+                        <div class="mockup-line long"></div>
+                        <div class="mockup-line medium"></div>
+                        <div class="mockup-line short"></div>
+                        <div style="margin-top: 1rem; padding: 0.8rem; background: var(--background); border-radius: 8px; display: flex; justify-content: space-between;">
+                            <span>45 students</span>
+                            <span style="font-weight: 600; color: var(--primary);">Publish all →</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. LIVING MAGAZINE -->
+        <div class="feature-section">
+            <div class="feature-grid">
+                <div class="feature-content">
+                    <h2>Living Magazine</h2>
+                    <p class="feature-description">Your school's story, published daily — not annually.</p>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-soft);">Events. Student achievements. Photo galleries. News. Admin approves. Teachers submit. Parents see instantly.</p>
+                    
+                    <div class="feature-impact">
+                        <p>“No printing costs. No 50-page PDFs in June for events that happened in December.”</p>
+                    </div>
+                    
+                    <ul class="feature-details">
+                        <li>Feels like social media — familiar, fast, visual</li>
+                        <li>Alumni stay connected to their school's story</li>
+                        <li>Annual magazine becomes a highlight reel, not a forgotten archive</li>
+                        <li>Prospective parents see a school that's alive, not a brochure</li>
+                    </ul>
+                </div>
+                <div class="feature-visual">
+                    <div class="mockup-label">⬤⬤⬤ School Feed</div>
+                    <div style="background: white; border-radius: 16px; padding: 1rem;">
+                        <div style="display: flex; gap: 0.8rem; margin-bottom: 1rem;">
+                            <div style="width: 40px; height: 40px; background: var(--accent-soft); border-radius: 50%;"></div>
+                            <div>
+                                <div style="font-weight: 600;">Kogbodi International</div>
+                                <div style="font-size: 0.8rem; color: var(--text-muted);">2 hours ago</div>
+                            </div>
+                        </div>
+                        <p style="margin-bottom: 0.8rem;">SS1 Science Quiz winners! 🏆</p>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin-bottom: 0.8rem;">
+                            <div style="height: 80px; background: var(--background); border-radius: 8px;"></div>
+                            <div style="height: 80px; background: var(--background); border-radius: 8px;"></div>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <span style="color: var(--accent);">❤️ 24</span>
+                            <span style="color: var(--accent);">💬 7</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. ITERATIVE DEVELOPMENT — ZERO EXTRA COST -->
+        <div class="iteration">
+            <h2>Built Forever, Not For Lock-In</h2>
+            <p class="iteration-sub">Every feature we've ever built. Every feature we'll ever build. Available to every school. No tiers. No upgrade fees.</p>
+            
+            <div class="iteration-grid">
+                <div class="iteration-card">
+                    <h3>V1 schools get V2 free</h3>
+                    <p>The school that signs up today pays the same per-student fee as the school that signs up in 2030.</p>
+                </div>
+                <div class="iteration-card">
+                    <h3>Features roll forward</h3>
+                    <p>Every new feature is available to every school. No tier locking. No enterprise upsell.</p>
+                </div>
+                <div class="iteration-card">
+                    <h3>Pricing only ever decreases</h3>
+                    <p>As we grow, per-student costs go down — never up. You benefit from our scale.</p>
+                </div>
+                <div class="iteration-card">
+                    <h3>No surprise bills</h3>
+                    <p>Fees calculated only when results are published. No results? No invoice.</p>
+                </div>
+            </div>
+            
+            <div class="iteration-guarantee">
+                ⚡ Open by default. New features are free unless they require significant infrastructure — and those are priced at cost + minimal margin, disclosed transparently.
+            </div>
+        </div>
+
+        <!-- BACK TO HOME LINK -->
+        <div style="text-align: center; margin: 3rem 0;">
+            <a href="index.html" style="color: var(--accent); text-decoration: none; font-weight: 500; border-bottom: 2px solid var(--accent); padding-bottom: 4px;">← Back to home</a>
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div>© 2026 Acadryx — infrastructure for schools</div>
+            <div class="student-signature">
+                Built by Simeon, one line at a time. First instance: Kogbodi International School.
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

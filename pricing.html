@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acadryx – Pricing</title>
+    <style>
+        /* ---------- ACADRYX BRAND ---------- */
+        /* Simeon · 16 · Built with hands, not generators */
+        /* Blue: rgb(11, 41, 190) · Teal: rgb(13, 124, 150) · Light: rgb(230, 230, 255) */
+        
+        :root {
+            --primary: rgb(11, 41, 190);
+            --primary-dark: rgb(8, 30, 140);
+            --background: rgb(230, 230, 255);
+            --logo: rgb(0, 0, 100);
+            --accent: rgb(13, 124, 150);
+            --accent-soft: rgba(13, 124, 150, 0.1);
+            --border-light: #E2E8F0;
+            --text-dark: #1A2E3C;
+            --text-soft: #334B5C;
+            --text-muted: #4F6F7F;
+            --card-white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--background);
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 2rem 1.5rem;
+            padding-top: 0;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* HEADER / NAV */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4rem;
+            flex-wrap: wrap;
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 1rem;
+            box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        
+        .logo-text {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--logo);
+            text-decoration: underline wavy var(--accent);
+            text-underline-offset: 8px;
+            text-decoration-thickness: 2px;
+        }
+        
+        .globe {
+            font-size: 1.8rem;
+            line-height: 1;
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            margin-left: 2rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 450;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* PAGE HEADER */
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .subhead {
+            font-size: 1.3rem;
+            color: var(--text-soft);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* PHILOSOPHY */
+        .philosophy {
+            background: var(--card-white);
+            padding: 3rem;
+            border-radius: 40px;
+            margin-bottom: 4rem;
+            border: 1px solid var(--border-light);
+            text-align: center;
+        }
+
+        .philosophy h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .philosophy p {
+            font-size: 1.2rem;
+            color: var(--text-soft);
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .philosophy-highlight {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: var(--accent-soft);
+            border-radius: 60px;
+            display: inline-block;
+        }
+
+        /* PRICING GRID */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .pricing-card {
+            background: var(--card-white);
+            padding: 2.5rem 2rem;
+            border-radius: 32px;
+            border: 1px solid var(--border-light);
+            transition: transform 0.2s;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(11, 41, 190, 0.06);
+        }
+
+        .pricing-card.featured {
+            background: var(--primary);
+            color: white;
+            border: none;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            text-align: left;
+        }
+
+        .pricing-card.featured h3 {
+            color: white;
+        }
+
+        .pricing-subtitle {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .pricing-card.featured .pricing-subtitle {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+            text-align: left;
+        }
+
+        .pricing-card.featured .price {
+            color: white;
+        }
+
+        .price-period {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .pricing-card.featured .price-period {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2.5rem;
+        }
+
+        .pricing-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            text-align: left;
+        }
+
+        .pricing-card.featured .pricing-features li {
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .pricing-features li::before {
+            content: "✓";
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .pricing-card.featured .pricing-features li::before {
+            color: white;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: 0.2s;
+            text-align: center;
+            border: 1px solid transparent;
+            width: 100%;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(11, 41, 190, 0.2);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 1px solid var(--border-light);
+            color: var(--primary);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            background-color: var(--accent-soft);
+        }
+
+        .pricing-card.featured .btn-primary {
+            background: white;
+            color: var(--primary);
+        }
+
+        .pricing-card.featured .btn-primary:hover {
+            background: rgba(255, 255, 255, 0.9);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+        }
+
+        /* HOW IT WORKS */
+        .how-pricing-works {
+            background: var(--card-white);
+            padding: 3rem;
+            border-radius: 40px;
+            margin-bottom: 4rem;
+            border: 1px solid var(--border-light);
+        }
+
+        .how-pricing-works h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .step-item {
+            text-align: center;
+        }
+
+        .step-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: var(--accent-soft);
+            color: var(--accent);
+            font-size: 1.5rem;
+            font-weight: 700;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+        }
+
+        .step-item h3 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+        }
+
+        .step-item p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        /* GUARANTEES */
+        .guarantees {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .guarantee-card {
+            background: var(--card-white);
+            padding: 2rem 1.5rem;
+            border-radius: 32px;
+            border: 1px solid var(--border-light);
+            text-align: center;
+        }
+
+        .guarantee-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .guarantee-card h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+        }
+
+        .guarantee-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        /* FAQ */
+        .faq {
+            background: var(--card-white);
+            padding: 3rem;
+            border-radius: 40px;
+            margin-bottom: 4rem;
+            border: 1px solid var(--border-light);
+        }
+
+        .faq h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .faq-item h4 {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-item p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        /* FOOTER */
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-light);
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .student-signature {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 800px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .steps-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .guarantees {
+                grid-template-columns: 1fr;
+            }
+            
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 { font-size: 2.4rem; }
+            .navbar { flex-direction: column; align-items: flex-start; gap: 1rem; }
+            .nav-links a { margin-left: 0; margin-right: 1.5rem; }
+            .philosophy { padding: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <header class="navbar">
+            <div class="logo">
+                <span class="logo-text">Acadryx</span>
+                <span class="globe">🌍</span>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="features.html">Features</a>
+                <a href="pricing.html" class="active">Pricing</a>
+                <a href="#">Docs</a>
+            </nav>
+        </header>
+
+        <!-- PAGE HEADER -->
+        <div class="page-header">
+            <h1>Pricing That Disappears</h1>
+            <p class="subhead">So small you won't feel it. So fair you'll never want to leave.</p>
+        </div>
+
+        <!-- PHILOSOPHY -->
+        <div class="philosophy">
+            <h2>We don't have "plans." We have promises.</h2>
+            <p>No tiers. No feature gating. No enterprise upsell. Every school gets everything Acadryx builds — today and forever.</p>
+            <p style="font-size: 1rem; color: var(--text-muted);">The only cost is a tiny per-student fee when you publish results. Teachers, parents, and admins are always free.</p>
+            <div class="philosophy-highlight">
+                ⚡ You pay only when your school is active. No results? No invoice.
+            </div>
+        </div>
+
+        <!-- PRICING CARDS -->
+        <div class="pricing-grid">
+            <!-- School Plan - BLUE featured -->
+            <div class="pricing-card featured">
+                <h3>School Plan</h3>
+                <div class="pricing-subtitle">For primary, secondary, and nursery institutions</div>
+                <div class="price">Minimal</div>
+                <div class="price-period">per student, per term — only on result day</div>
+                <ul class="pricing-features">
+                    <li>Full Acadryx infrastructure — all features</li>
+                    <li>Permanent academic records, forever</li>
+                    <li>Student identity from admission to alumni</li>
+                    <li>One-click result publication</li>
+                    <li>Living magazine — no printing costs</li>
+                    <li>Alumni network access</li>
+                    <li>Priority support</li>
+                    <li>All future features, included</li>
+                </ul>
+                <a href="#" class="btn btn-primary">Start free trial →</a>
+                <p style="font-size: 0.8rem; color: rgba(255,255,255,0.6); margin-top: 1rem; text-align: center;">No card required. No commitment.</p>
+            </div>
+
+            <!-- Always Free - WHITE -->
+            <div class="pricing-card">
+                <h3>Always Free</h3>
+                <div class="pricing-subtitle">For teachers, parents, and alumni — forever</div>
+                <div class="price">₦0</div>
+                <div class="price-period">never a single kobo</div>
+                <ul class="pricing-features">
+                    <li>Unlimited teacher accounts</li>
+                    <li>Parent access to results and events</li>
+                    <li>Admin portal — full access</li>
+                    <li>Event and resource management</li>
+                    <li>Result entry and viewing</li>
+                    <li>Community and alumni features</li>
+                    <li>No time limits. No hidden fees.</li>
+                </ul>
+                <a href="#" class="btn btn-secondary">Get started →</a>
+            </div>
+        </div>
+
+        <!-- HOW PRICING WORKS -->
+        <div class="how-pricing-works">
+            <h2>How the School Plan works</h2>
+            <div class="steps-grid">
+                <div class="step-item">
+                    <div class="step-number">01</div>
+                    <h3>We count active students</h3>
+                    <p>On the day you publish results, we count the students in that term. Not enrolled — published.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">02</div>
+                    <h3>We multiply by a tiny number</h3>
+                    <p>Currently ₦1000 per student. Yes, that's all. One thousand naira. Once launched, you remain on this pricing except if pricing decreases. Increase = No Effect.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">03</div>
+                    <h3>That's your invoice</h3>
+                    <p>No monthly fees. No annual contracts. Just one small invoice when your work is done.</p>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 2rem; color: var(--text-muted); font-size: 0.9rem;">A school with 500 students publishing termly results pays ₦500,000 per term. That's ₦1000 per student per term. Less than a week's transport fare. Simply mind-blowing</p>
+        </div>
+
+        <!-- GUARANTEES -->
+        <div class="guarantees">
+            <div class="guarantee-card">
+                <div class="guarantee-icon">📉</div>
+                <h3>Pricing only ever decreases</h3>
+                <p>As we grow, per-student costs go down — never up. You benefit from our scale.</p>
+            </div>
+            <div class="guarantee-card">
+                <div class="guarantee-icon">🔄</div>
+                <h3>V1 schools pay 2030 prices</h3>
+                <p>The school that signs up today pays the same as the school that signs up in 10 years.</p>
+            </div>
+            <div class="guarantee-card">
+                <div class="guarantee-icon">🔓</div>
+                <h3>No feature lock-in</h3>
+                <p>Every new feature we build is available to every school. No tiers. No upsell.</p>
+            </div>
+        </div>
+
+        <!-- FAQ -->
+        <div class="faq">
+            <h2>Questions you deserve honest answers to</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>What if we don't publish results one term?</h4>
+                    <p>You don't pay. Simple. Fees are only calculated on the day results are officially published. If you take a term off, we take no fee.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Do you charge for past students?</h4>
+                    <p>Never. Alumni accounts are free. Their records stay in the system permanently at no cost.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>What about teachers and parents?</h4>
+                    <p>Always free. Unlimited teachers. Unlimited parents. We don't charge for people — only for published student results.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Will the price go up later?</h4>
+                    <p>No. We guarantee that per-student pricing will never increase. It will only decrease as we grow.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>What if we have multiple campuses?</h4>
+                    <p>Each campus is a separate school instance. You pay per campus, per term, only when results are published.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Do you offer discounts for large schools?</h4>
+                    <p>Yes. Contact us and we'll structure something fair. We're not here to extract maximum revenue — we're here to fund development.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- COMPARISON (quiet) -->
+        <div style="background: var(--accent-soft); padding: 2rem; border-radius: 40px; margin-bottom: 4rem; text-align: center; border: 1px solid rgba(13,124,150,0.2);">
+            <p style="font-size: 1.1rem; color: var(--text-dark); margin-bottom: 0.5rem;">🧮 <strong>A quick comparison</strong></p>
+            <p style="color: var(--text-soft);">Most school software charges ₦300,000–₦1,000,000 upfront plus annual fees. Acadryx charges ₦100 per student when you publish. A 500-student school pays ₦50,000 per term. No upfront. No annual. Just results.</p>
+        </div>
+
+        <!-- FINAL CTA -->
+        <div style="background: var(--primary); color: white; padding: 4rem 2rem; border-radius: 40px; text-align: center; margin-bottom: 3rem;">
+            <h2 style="color: white; font-size: 2rem; margin-bottom: 1.5rem;">Still have questions?</h2>
+            <p style="color: rgba(255,255,255,0.9); font-size: 1.2rem; max-width: 600px; margin: 0 auto 2rem;">
+                Or ready to try Acadryx with zero commitment?
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="#" style="background: white; color: var(--primary); padding: 0.8rem 2rem; border-radius: 40px; text-decoration: none; font-weight: 600;">Start free trial →</a>
+                <a href="#" style="background: transparent; color: white; padding: 0.8rem 2rem; border-radius: 40px; text-decoration: none; font-weight: 600; border: 1px solid rgba(255,255,255,0.3);">Contact Simeon →</a>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div>© 2026 Acadryx — infrastructure for schools</div>
+            <div class="student-signature">
+                Built by Simeon, one line at a time. First instance: Kogbodi International School.
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
