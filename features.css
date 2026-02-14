@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acadryx – Features</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* PAGE-SPECIFIC STYLES FOR FEATURES.HTML */
+        
+        .container {
+            max-width: 1100px;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+        }
+
+        .subhead {
+            font-size: 1.3rem;
+            color: var(--text-soft);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .feature-section {
+            margin-bottom: 5rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .feature-content h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .feature-description {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .feature-impact {
+            background: var(--card-white);
+            padding: 1.5rem;
+            border-radius: 24px;
+            border-left: 6px solid var(--accent);
+            margin: 1.5rem 0;
+        }
+
+        .feature-impact p {
+            font-size: 1.1rem;
+            color: var(--text-soft);
+            margin-bottom: 0;
+            font-style: italic;
+        }
+
+        .feature-details {
+            list-style: none;
+        }
+
+        .feature-details li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.8rem;
+            position: relative;
+            font-size: 1rem;
+            color: var(--text-muted);
+        }
+
+        .feature-details li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .feature-visual {
+            background: var(--card-white);
+            padding: 2rem;
+            border-radius: 32px;
+            border: 1px solid var(--border-light);
+            box-shadow: 0 8px 24px rgba(11, 41, 190, 0.04);
+        }
+
+        .mockup-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .mockup-card {
+            background: var(--background);
+            padding: 1.5rem;
+            border-radius: 16px;
+            margin-bottom: 1rem;
+        }
+
+        .mockup-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .mockup-line {
+            height: 8px;
+            background: rgba(11, 41, 190, 0.1);
+            border-radius: 4px;
+            margin-bottom: 0.8rem;
+        }
+
+        .mockup-line.short { width: 60%; }
+        .mockup-line.medium { width: 80%; }
+        .mockup-line.long { width: 100%; }
+
+        .mockup-badge {
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            background: var(--accent-soft);
+            color: var(--accent);
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .iteration {
+            background: var(--primary);
+            color: white;
+            padding: 4rem 3rem;
+            border-radius: 40px;
+            margin: 4rem 0;
+        }
+
+        .iteration h2 {
+            color: white;
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .iteration-sub {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+
+        .iteration-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem 1.5rem;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(4px);
+        }
+
+        .iteration-card h3 {
+            color: white;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .iteration-card p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            margin-bottom: 0;
+            text-align: left;
+        }
+
+        @media (max-width: 800px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .feature-visual {
+                order: -1;
+            }
+            
+            h1 { font-size: 2.4rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- REST OF YOUR HTML STAYS THE SAME -->

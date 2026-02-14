@@ -1,4 +1,4 @@
-j<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -34,27 +34,16 @@ j<!DOCTYPE html>
             font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             color: var(--text-dark);
             line-height: 1.6;
-            padding: 2rem 1.5rem;
             padding-top: 0;
         }
 
         .container {
             max-width: 1100px;
             margin: 0 auto;
+            padding: 2rem 1.5rem;
         }
 
-        /* HEADER / NAV (copied from index) */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 4rem;
-            flex-wrap: wrap;
-            border-bottom: 1px solid var(--border-light);
-            padding-bottom: 1rem;
-            box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.04);
-        }
-
+        /* LOGO/ HEADER / NAV (copied from index) */
         .logo {
             display: flex;
             align-items: center;
@@ -76,9 +65,28 @@ j<!DOCTYPE html>
             text-decoration: none;
         }
 
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4rem;
+            flex-wrap: wrap;
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 1rem;
+            box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+            background: linear-gradient(155deg, var(--primary), var(--background)) !important;
+            position: sticky;
+            top: 0px;
+            margin-top: 10px;
+            padding: 10px;
+            padding-left: 1rem;
+            z-index: 50;
+        }
+        
         .nav-links a {
             margin-left: 2rem;
             color: var(--text-muted);
+            color: white;
             text-decoration: none;
             font-weight: 450;
         }
@@ -335,21 +343,21 @@ j<!DOCTYPE html>
     </style>
 </head>
 <body>
-    <div class="container">
         <!-- HEADER (same as index) -->
-        <header class="navbar">
             <div class="logo">
                 <span class="logo-text">Acadryx</span>
                 <span class="globe">🌍</span>
             </div>
+        <header class="navbar">
             <nav class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="features.html" class="active">Features</a>
-                <a href="#">Pricing</a>
-                <a href="#">Docs</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="docs.html">Docs</a>
             </nav>
         </header>
 
+    <div class="container">
         <!-- PAGE HEADER -->
         <div class="page-header">
             <h1>What Acadryx Actually Does</h1>
@@ -556,4 +564,5 @@ j<!DOCTYPE html>
         </footer>
     </div>
 </body>
+<script src="kiki.js"></script>
 </html>
