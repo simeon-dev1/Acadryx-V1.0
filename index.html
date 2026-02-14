@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acadryx – The Infrastructure Schools Deserve</title>
+     <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+     <script>eruda.init()</script>
     <style>
         /* ---------- ACADRYX BRAND ---------- */
         /* Simeon · 16 · Built with hands, not generators */
@@ -130,6 +132,11 @@
             display: flex;
             align-items: center;
             gap: 0.3rem;
+        }
+
+        .logo::after {
+        	content: "🌍";
+        	font-size: 2.2rem
         }
         
         .logo-text {
@@ -390,6 +397,7 @@
             .nav-links a { margin-left: 0; margin-right: 1.5rem; }
             .pricing-card.featured { transform: none; }
         }
+
     </style>
 </head>
 <body>
@@ -398,15 +406,15 @@
         <header class="navbar">
             <div class="logo">
                 <span class="logo-text">Acadryx</span>
-                <span class="globe">🌍</span>
             </div>
             <nav class="nav-links">
                 <a href="features.html">Features</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="#">Docs</a>
+                <a href="#features">Docs</a>
                 <a href="#">Contact</a>
             </nav>
         </header>
+
 
         <!-- HERO -->
         <section class="hero">
@@ -443,7 +451,7 @@
         <h2>Built for How Schools Actually Work</h2>
         <p style="margin-bottom: 3rem;">Every feature designed around the reality of academic institutions — not retrofitted from consumer apps.</p>
         
-        <div class="features">
+        <div id="features" class="features">
             <div class="feature-item">
                 <h3>School-First Architecture</h3>
                 <p>Schools are the primary entity. Students, teachers, and parents access school-specific apps while Acadryx provides the backbone.</p>
@@ -492,7 +500,7 @@
                     <li>Alumni network access</li>
                     <li>Priority support</li>
                 </ul>
-                <a href="#" class="btn btn-primary" style="background: white; color: var(--primary); width: 100%;">Contact sales →</a>
+                <a class="btn btn-primary" style="background: white; color: var(--primary); width: 100%;">Contact sales →</a>
             </div>
         
             <!-- Always Free - WHITE background -->
@@ -525,7 +533,7 @@
             <p style="max-width: 600px; margin-left: auto; margin-right: auto;">
                 Join pilot schools already using Acadryx. Start your free trial today.
             </p>
-            <a href="#" class="btn btn-primary">Start free trial →</a>
+            <a  class="btn btn-primary">Start free trial →</a>
         </div>
 
         <!-- FOOTER -->
@@ -536,5 +544,33 @@
             </div>
         </footer>
     </div>
+    <script>
+    	button = document.querySelector(".btn-group > a")
+    	button.addEventListener("click", () => {
+    		alert("Welcome... You'll never regret this")
+    	})
+
+    	/*/ Option 1: Target both separately
+    	const trialBtn = document.querySelector(".btn-group > .btn-primary");
+    	const canonBtn = document.querySelector(".btn-group > .btn-secondary");
+    	
+    	trialBtn.addEventListener("click", () => {
+    	  window.location.href = "/signup";  // actually send them somewhere
+    	});
+    	
+    	canonBtn.addEventListener("click", () => {
+    	  window.location.href = "/docs";     // actually show them docs
+    	});
+    	*/
+    	document.querySelector(".btn-group").addEventListener("click", (e) => {
+    	  if (e.target.classList.contains("btn-primary")) {
+    	    alert("Trial coming soon)");
+    	  }
+    	  if (e.target.classList.contains("btn-secondary")) {
+    	    alert("The Canon: Chapter 1 - In the beginning, Simeon coded...");
+    	  }
+    	});*/
+    </script>
+    <script src="kiki.js"></script>
 </body>
 </html>

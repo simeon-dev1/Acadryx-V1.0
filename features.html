@@ -256,10 +256,13 @@ j<!DOCTYPE html>
             margin: 0 auto 3rem;
         }
 
-        .iteration-grid {
+        .iteration-flex {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 2rem;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
         }
 
         .iteration-card {
@@ -268,6 +271,7 @@ j<!DOCTYPE html>
             border-radius: 24px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(4px);
+            width: 100%;
         }
 
         .iteration-card h3 {
@@ -511,10 +515,10 @@ j<!DOCTYPE html>
 
         <!-- 5. ITERATIVE DEVELOPMENT — ZERO EXTRA COST -->
         <div class="iteration">
-            <h2>Built Forever, Not For Lock-In</h2>
+            <h2>Built For Forever, Not For Lock-In</h2>
             <p class="iteration-sub">Every feature we've ever built. Every feature we'll ever build. Available to every school. No tiers. No upgrade fees.</p>
             
-            <div class="iteration-grid">
+            <div class="iteration-flex">
                 <div class="iteration-card">
                     <h3>V1 schools get V2 free</h3>
                     <p>The school that signs up today pays the same per-student fee as the school that signs up in 2030.</p>
@@ -534,7 +538,7 @@ j<!DOCTYPE html>
             </div>
             
             <div class="iteration-guarantee">
-                ⚡ Open by default. New features are free unless they require significant infrastructure — and those are priced at cost + minimal margin, disclosed transparently.
+                ⚡ Open by default. New features are free - literally!
             </div>
         </div>
 
