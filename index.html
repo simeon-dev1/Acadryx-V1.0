@@ -36,7 +36,6 @@
             font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             color: var(--text-dark);
             line-height: 1.5;
-            padding: 2rem 1.5rem;
             padding-top: 0;
         }
 
@@ -132,6 +131,7 @@
             display: flex;
             align-items: center;
             gap: 0.3rem;
+            padding-left: 15px;;
         }
 
         .logo::after {
@@ -161,9 +161,14 @@
             font-weight: 450;
         }
 
+        .nav-links > a:first-child {
+        	margin-left: 0px;
+        }
+
         .nav-links a:hover {
             color: var(--accent);
         }
+
 
         /* HERO */
         .hero {
@@ -398,24 +403,50 @@
             .pricing-card.featured { transform: none; }
         }
 
+        /*EXPERIMENTS*/
+
+       .navbar {
+        	padding-left: 1rem;
+        	background-color: var(--primary);
+        	opacity: 200%
+        	
+        }
+
+        .navbar {
+        	position: sticky;
+        	top: 0px;
+        	margin-top: 10px;
+        	padding: 10px;
+        	padding-left: 1rem;
+        /*???*/	border-shadow: 10px 10px black;
+
+
+
+        
+        }
+
+        .navbar a {
+        	color: white;
+        }
+
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- HEADER -->
-        <header class="navbar">
-            <div class="logo">
-                <span class="logo-text">Acadryx</span>
-            </div>
-            <nav class="nav-links">
-                <a href="features.html">Features</a>
-                <a href="pricing.html">Pricing</a>
-                <a href="#features">Docs</a>
-                <a href="contact.html">Contact</a>
-            </nav>
-        </header>
+	<!--LOGO-->
+    <div class="logo">
+        <span class="logo-text">Acadryx</span>
+    </div>
+    <!-- HEADER -->
+    <header class="navbar">
+        <nav class="nav-links">
+            <a href="features.html">Features</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="#features">Docs</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
 
-
+	<div class="container">
         <!-- HERO -->
         <section class="hero">
             <div class="version-badge">
