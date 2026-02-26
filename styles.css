@@ -1,20 +1,102 @@
 /* ---------- ACADRYX BRAND ---------- */
-/* Simeon · 16 · Built with hands, not generators */
 /* Blue: rgb(11, 41, 190) · Teal: rgb(13, 124, 150) · Light: rgb(230, 230, 255) */
 
 :root {
-    --primary: rgb(11, 41, 190);
-    --primary-dark: rgb(8, 30, 140);
-    --background: rgb(230, 230, 255);
-    --logo: rgb(0, 0, 100);
-    --accent: rgb(13, 124, 150);
-    --accent-soft: rgba(13, 124, 150, 0.1);
-    --border-light: #E2E8F0;
-    --text-dark: #1A2E3C;
-    --text-soft: #334B5C;
-    --text-muted: #4F6F7F;
-    --card-white: #ffffff;
+    /* --------------------------------------
+       1. RAW COLORS (actual values)
+       -------------------------------------- */
+    --blue-deep: rgb(11, 41, 190);        /* Primary brand blue */
+    --blue-darker: rgb(8, 30, 140);        /* Darker for hover */
+    --blue-royal: rgb(0, 0, 100);          /* Logo text */
+    --blue-bright: rgb(140, 170, 255);     /* For dark mode */
+    --blue-glow: rgb(110, 140, 240);       /* Dark mode hover */
+    
+    --teal: rgb(13, 124, 150);              /* Accent color */
+    --teal-soft: rgba(13, 124, 150, 0.1);   /* Soft accent */
+    --teal-bright: rgb(100, 200, 220);      /* Dark mode accent */
+    --teal-glow: rgba(100, 200, 220, 0.15); /* Dark mode soft */
+    
+    --light-bg: rgb(230, 230, 255);         /* Light background */
+    --dark-bg: rgb(10, 12, 30);             /* Dark background */
+    --dark-card: rgb(26, 31, 53);           /* Dark card background */
+    
+    --white: #ffffff;                        /* Pure white */
+    --off-white: #f8f9fc;                    /* Slightly off-white */
+    --black: #000000;                         /* Pure black */
+    
+    --gray-border: #E2E8F0;                   /* Light borders */
+    --gray-border-dark: #2a3a4a;               /* Dark borders */
+    
+    --text-primary-light: #1A2E3C;            /* Dark text for light bg */
+    --text-secondary-light: #334B5C;          
+    --text-muted-light: #4F6F7F;
+    
+    --text-primary-dark: #e8ecf5;              /* Light text for dark bg */
+    --text-secondary-dark: #b8c5d5;
+    --text-muted-dark: #8a9bb0;
+    
+    /* --------------------------------------
+       2. THEME VARIABLES (light/dark control)
+       -------------------------------------- */
+    --primary-raw: var(--blue-deep);           /* Main brand color */
+    --primary-dark-raw: var(--blue-darker);    /* Darker variant */
+    --background-raw: var(--light-bg);         /* Page background */
+    --logo-raw: var(--blue-royal);              /* Logo color */
+    --accent-raw: var(--teal);                   /* Accent color */
+    --accent-soft-raw: var(--teal-soft);         /* Soft accent */
+    --border-raw: var(--gray-border);            /* Border color */
+    --card-raw: var(--white);                    /* Card background */
+    --text-primary-raw: var(--text-primary-light);
+    --text-secondary-raw: var(--text-secondary-light);
+    --text-muted-raw: var(--text-muted-light);
+    
+    /* --------------------------------------
+       3. COMPOSED/GRADIENT VARIABLES
+       -------------------------------------- */
+    --acd-gradient: linear-gradient(155deg, var(--primary-raw), var(--background-raw));
+    --nav-background: var(--acd-gradient);
+    
+    /* --------------------------------------
+       4. SEMANTIC VARIABLES (what things ARE)
+       -------------------------------------- */
+    --primary: var(--primary-raw);
+    --primary-dark: var(--primary-dark-raw);
+    --background: var(--background-raw);
+    --logo: var(--logo-raw);
+    --accent: var(--accent-raw);
+    --accent-soft: var(--accent-soft-raw);
+    --border-light: var(--border-raw);
+    --card-white: var(--card-raw);
+    --text-dark: var(--text-primary-raw);
+    --text-soft: var(--text-secondary-raw);
+    --text-muted: var(--text-muted-raw);
 }
+
+/* --------------------------------------
+   5. DARK MODE OVERRIDES UNDER REVIEW
+   -------------------------------------- */
+/*@media (prefers-color-scheme: dark) {
+    :root {
+        /* Switch theme variables to dark values */
+        --primary-raw: var(--blue-bright);
+        --primary-dark-raw: var(--blue-glow);
+        --background-raw: var(--dark-bg);
+        --logo-raw: rgb(210, 230, 255);  /* Custom bright logo */
+        --accent-raw: var(--teal-bright);
+        --accent-soft-raw: var(--teal-glow);
+        --border-raw: var(--gray-border-dark);
+        --card-raw: var(--dark-card);
+        --text-primary-raw: var(--text-primary-dark);
+        --text-secondary-raw: var(--text-secondary-dark);
+        --text-muted-raw: var(--text-muted-dark);
+        
+        /* Gradient recomposes automatically using new values */
+        /* --nav-background updates because it uses --primary-raw and --background-raw */
+    }
+}
+
+/* DARK MODE UP UNDER REVIEW AND ITERATION. YOU MAY
+IMROVE IT WHILE PASSING BY */
 
 * {
     margin: 0;
@@ -103,13 +185,14 @@ p {
     border-bottom: 1px solid var(--border-light);
     padding-bottom: 1rem;
     box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.04);
-    background: linear-gradient(155deg, var(--primary), var(--background)) !important;
+    background: var(--nav-background);
     position: sticky;
     top: 0px;
     margin-top: 10px;
     padding: 10px;
     padding-left: 1rem;
     z-index: 50;
+    
 }
 
 .navbar a {

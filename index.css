@@ -1,14 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acadryx – The Infrastructure Schools Deserve</title>
-    <link rel="icon" type="image/png" href="acadryx.png">
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
-    <style>
-        /* PAGE-SPECIFIC STYLES FOR INDEX.HTML */
         
         /* BUTTONS */
         .btn-group {
@@ -263,7 +252,3 @@
             .hero h1 { font-size: 2.2rem; }
             .pricing-card.featured { transform: none; }
         }
-    </style>
-</head>
-<body>
-    <!-- REST OF YOUR HTML STAYS THE SAME -->

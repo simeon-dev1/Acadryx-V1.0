@@ -88,12 +88,14 @@
             font-weight: 700;
         }
 
-        .feature-visual {
+         .feature-visual {
             background: var(--card-white);
             padding: 2rem;
             border-radius: 32px;
             border: 1px solid var(--border-light);
             box-shadow: 0 8px 24px rgba(11, 41, 190, 0.04);
+            overflow-x: auto;
+            
         }
 
         .mockup-label {
