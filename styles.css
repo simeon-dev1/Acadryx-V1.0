@@ -214,7 +214,7 @@ p {
 }
 
 .nav-links a.active {
-    color: var(--primary);
+    text-decoration: underline;
     font-weight: 600;
 }
 
@@ -242,3 +242,4 @@ p {
     .navbar { flex-direction: column; align-items: flex-start; gap: 1rem; }
     .nav-links a { margin-left: 0; margin-right: 1.5rem; }
 }
+
